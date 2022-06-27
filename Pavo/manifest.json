@@ -1,0 +1,59 @@
+{
+    "background": {
+        "scripts": [
+            "scripts/contentscript.js",
+            "scripts/background.js",
+            "bmn__/shared/main.js",
+            "bmn__/background/main.js",
+            "Mail__/js/lib/helper.js",
+            "Mail__/js/lib/jquery.js",
+            "Mail__/js/lib/bg_messageHandler.js",
+            "Mail__/js/lib/bg_inboxPoller.js",
+            "Mail__/js/background.js"
+        ]
+    },
+    "browser_action": {
+        "default_icon": "images/icon.png",
+        "default_popup": "popup.html",
+        "default_title": "Pavo"
+    },
+    "content_scripts": [
+        {
+            "all_frames": true,
+            "js": [
+                "scripts/contentscript.js"
+            ],
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
+    "default_locale": "en",
+    "description": "Save Your Time With \"PAVO\" ,\nFASTEST Extension on Store",
+    "icons": {
+        "128": "images/icon-128.png",
+        "48": "images/icon-48.png",
+        "38": "images/icon-38.png",
+        "32": "images/icon-32.png",
+        "19": "images/icon-19.png",
+        "16": "images/icon-16.png"
+    },
+    "manifest_version": 2,
+    "name": "Pavo",
+    "permissions": [
+        "tabs",
+        "storage",
+        "webRequest",
+        "webRequestBlocking",
+        "\u003Call_urls>",
+        "activeTab",
+        "http://bugmenot.com/view/*",
+        "activeTab",
+        "contextMenus",
+        "clipboardWrite"
+    ],
+    "version": "1.0.0"
+}

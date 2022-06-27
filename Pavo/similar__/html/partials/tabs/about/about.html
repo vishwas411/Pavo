@@ -1,0 +1,303 @@
+<article ng-controller="aboutCtrl">
+    <div ng-if="!ExtraDetailLoaded" class="align-center" style="padding: 130px 0;">
+        <div data-role="preloader" data-type="metro" data-style="color"></div>
+        <!-- <span class="mif-spinner4 mif-ani-spin mif-2x"></span> -->
+    </div>
+    <div ng-if="::ExtraDetailLoaded">
+        <div class="grid margin10 no-margin-top">
+            <div class="row cells12">
+                <div class="cell colspan4 paddingr20">
+                    <div class="grid no-margin" style="border-bottom:thin solid #c6c6c6;">
+                        <div class="row cells12">
+                            <div class="cell colspan2">
+                                <div class="icon"><span class="mif-florist  fg-yellow padding-top-16"></span>
+                                </div>
+                            </div>
+                            <div class="cell colspan6 name-about text-secondary uppercase fg-gray">Adult</div>
+                            <div class="cell colspan4 name-about align-right" ng-if="websiteExtraDetail.is_adult==false">No</div>
+                            <div class="cell colspan4 name-about align-right" ng-if="::websiteExtraDetail.is_adult">Yes</div>
+                            <div class="cell colspan4 name-about align-right" ng-if="!websiteExtraDetail.is_adult && websiteExtraDetail.is_adult!=false">NA</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cell colspan4" style="border-bottom:thin solid #c6c6c6;">
+                    <div class="grid no-margin">
+                        <div class="row cells12">
+                            <div class="cell colspan2 icon">
+                                <span class="mif-dollars  fg-green padding-top-16"></span>
+                            </div>
+                            <div class="cell colspan4 name-about text-secondary uppercase fg-gray">Pricing</div>
+                            <div class="cell colspan6 name-about align-right" ng-if="::websiteExtraDetail.pricing" ng-bind="::websiteExtraDetail.pricing"></div>
+                            <div class="cell colspan6 name-about align-right" ng-if="!websiteExtraDetail.pricing">NA</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cell colspan4 paddingl20">
+                    <div class="grid no-margin" style="border-bottom:thin solid #c6c6c6;">
+                        <div class="row cells12">
+                            <div class="cell colspan2">
+                                <div class="col icon"><span class="mif-enter mif fg-blue padding-top-16"></span>
+                                </div>
+                            </div>
+                            <div class="cell colspan4 name-about text-secondary uppercase fg-gray">SignUp</div>
+                            <div class="cell colspan6 name-about align-right" ng-if="::websiteExtraDetail.sign_up" ng-bind="::websiteExtraDetail.sign_up"></div>
+                            <div class="cell colspan6 name-about align-right" ng-if="!websiteExtraDetail.sign_up">NA</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+            <div class="rank">
+                <div class="headings">
+                    <!-- CybrHome Rank -->
+                </div>
+                <div class="rows marginl10">
+                    <div class="row overview-column">
+                        <div class="col icon w30"><img ng-src="{{::websiteDetail.static_url}}all/shared/flags/flags_iso/24/ww.png" height="24" width="24" style="padding-top: 11px;"></div>
+                        <div class="col name text-secondary uppercase fg-gray">
+                            <!-- <div class="gr"> -->
+                            Global Rank
+                            <!--  </div> -->
+                        </div>
+                        <div class="col value right-side" ng-bind="::websiteRankDetail.rank.global"></div>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="row overview-column">
+                        <div class="col icon w30">
+                            <img ng-if="::countryCode" title="{{::websiteRankDetail.country.name}}" ng-src="{{::websiteRankDetail.country.flag}}" height="24" width="24" style="padding-top: 11px;">
+                            <div ng-hide="::countryCode">&nbsp;</div>
+                        </div>
+                        <div class="col name text-secondary uppercase fg-gray">
+                            <div>Country Rank</div>
+                        </div>
+                        <div class="col value right-side" ng-bind="::websiteRankDetail.rank.country"></div>
+                    </div>
+                    <div class="separator"></div>
+                </div>
+            </div>        
+            <div id="country">
+                <div class="title">
+                    <div class="headings">
+                        <!-- Country Details -->
+                    </div>
+                </div>
+                <div class="rows w270">
+                    <div class="row overview-column">
+                        <div class="col icon w30">
+                            <img ng-if="websiteDetail.country_served.code && websiteDetail.country_served.code!='1P'" ng-src="{{::websiteDetail.country_served.flag}}" height="24" width="24" style="padding-top: 11px;">
+                            <div class="fg-grayLight font-bold font-20" ng-if="websiteDetail.country_served.code=='1P'" style="padding-top: 8px !important;">1+
+                            </div>
+                            <div ng-show="!websiteDetail.country_served.code && websiteDetail.country_served.code!='1P'">&nbsp;</div>
+                        </div>
+                        <div class="col name text-secondary uppercase fg-gray">
+                            Country Served
+                        </div>
+                        <div class="col" ng-if="websiteDetail.country_served.name" ng-bind="::websiteDetail.country_served.name" ng-class="{'mid-text-flow':websiteDetail.country_served.name.length ==14,'value':websiteDetail.country_served.name.length <14,'large-text-flow':websiteDetail.country_served.name.length > 14}"></div>
+                        <div class="col value " ng-if="!websiteDetail.country_served.name">NA</div>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="row overview-column">
+                        <div class="col icon w30">
+                            <img ng-if="::websiteDetail.country_most_popular.code" ng-src="{{::websiteDetail.country_most_popular.flag}}" height="24" width="24" style="padding-top: 11px;">
+                            <div ng-hide="websiteDetail.country_most_popular.name">&nbsp;</div>
+                        </div>
+                        <div class="col name text-secondary uppercase fg-gray">
+                            <div>Most Popular In</div>
+                        </div>
+                        <div class="col" ng-if="::websiteDetail.country_most_popular.name" ng-bind="::websiteDetail.country_most_popular.name" ng-class="{'value':websiteDetail.country_most_popular.name.length <14,'mid-text-flow':websiteDetail.country_most_popular.name.length ==14,'large-text-flow':websiteDetail.country_most_popular.name.length >14}"></div>
+                        <div class="col value" ng-show="!websiteDetail.country_most_popular.name">NA</div>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="row overview-column">
+                        <div class="col icon w30">
+                            <img ng-if="::websiteDetail.country_origin.code" ng-src="{{::websiteDetail.country_origin.flag}}" height="24" width="24" style="padding-top: 11px;">
+                            <div ng-hide="websiteDetail.country_origin.name">&nbsp;</div>
+                        </div>
+
+                        <div class="col name text-secondary uppercase fg-gray">
+                            <div>Country origin</div>
+                        </div>
+                        <div class="col" ng-if="::websiteDetail.country_origin.name" ng-bind="::websiteDetail.country_origin.name" ng-class="{'value':websiteDetail.country_origin.name.length <14,'mid-text-flow':websiteDetail.country_origin.name.length ==14,'large-text-flow':websiteDetail.country_origin.name.length >14}"></div>
+                        <div class="col value text-secondary" ng-show="!websiteDetail.country_origin.name">NA</div>
+                    </div>
+                </div>
+            </div>            
+
+            <div class="rank mrg-top-n35">
+                <div class="headings">
+                </div>
+                <div class="rows marginl10">
+                    <div class="row overview-column">
+                        <div class="col icon w30"><span class="mif-language mif-lg icon-color overview-icon"></span>
+
+                        </div>
+                        <div class="col name text-secondary uppercase fg-gray text-secondary uppercase fg-gray">
+                            <!-- <div class="gr"> -->
+                            Language
+                            <!--  </div> -->
+                        </div>
+                        <div class="col value text-secondary right-side" ng-if="::websiteDetail.language" ng-bind="::websiteDetail.language"></div>
+                        <div class="col value text-secondary right-side" ng-show="!websiteDetail.language">NA</div>
+                    </div>
+                </div>
+            </div>            
+            
+            <div class="separator marginh20"></div>
+
+                        
+        <div class="grid marginh20 margint20 no-margin-bottom " ng-if="::websiteExtraDetail.short_description">
+            <div class="row cells1 marginb5">
+                <div class="cell">
+                    <div class="text-secondary uppercase fg-gray">
+                        Short description
+                    </div>
+                </div>
+            </div>
+            <div class="row cells1">
+                <div class="cell">
+                    <div class="full-size bg-white cursor-auto">
+
+                        <div class="tile-contentx overflow-auto">
+
+                            <div class="grid no-margin">
+                                <div class="row cells1 no-margin">
+
+                                    <div class="cell">
+                                        <p class="text-secondary no-margin align-justify h-auto" ng-bind="::websiteExtraDetail.short_description"></p>
+                                        </h5>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div ng-if="::websiteExtraDetail.full_description">
+                <div class="separator"></div>
+                <div class="grid marginb0 margint20">
+                    <div class="row cells1">
+                        <div class="cell">
+                            <div class="text-secondary uppercase fg-gray">
+                                Full description
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row cells1">
+                        <div class="cell">
+                            <div class="full-size bg-white bd-white">
+                                <div class="tile-scrollbar overflow-auto">
+                                    <div class="grid no-margin">
+                                        <div class="row cells1 no-margin">
+                                            <div class="cell">
+                                                <p style="height:auto;" class="text-secondary text-preline no-margin align-justify" ng-bind="::websiteExtraDetail.full_description"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div ng-include="'html/partials/tabs/about/long-description.html'"></div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-if="::websiteExtraDetail.video_url">
+                <div class="separator margint20"></div>
+                <div class="grid margint20">
+                    <div class="row cells1">
+                        <div class="cell">
+                            <div class="text-secondary uppercase fg-gray">
+                                Video
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row cells1">
+                        <div class="cell">
+                            <!-- <div ng-include="'html/partials/tabs/about/video-frame.html'"></div> -->
+                            <div class="videoWrapper">
+
+
+                                <iframe class="outline-no" allowfullscreen="" id="video-url" width="568" height="320" frameborder="0" style="border:0;" ng-src="{{::websiteExtraDetail.video_url}}" allowfullscreen>
+                                </iframe>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-if="websiteExtraDetail.additional_links.length">
+                <div class="separator margint20"></div>
+                <div class="grid marginh20x margint20">
+                    <div class="row cells1 marginb5">
+                        <div class="cell">
+                            <div class="text-secondary uppercase fg-gray">
+                                Additional Links
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row cells1 no-margin">
+                        <div class="cell">
+
+                            <div class="full-size bd-white bg-white">
+                                <div class="tile-scrollbar overflow-auto">
+                                    <div class="" ng-repeat="link in ::websiteExtraDetail.additional_links"><a href="{[{::link.url}]}" ng-bind="::link.title"></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-if="websiteExtraDetail.contact_detail">
+            <div class="separator margin10"></div>
+            <div class="grid marginh20 margint20">
+                <div class="row cells1">
+                    <div class="cell">
+                        <div class="text-secondary uppercase fg-gray">
+                            Contact Details
+                        </div>
+                    </div>
+                </div>
+                <div class="row cells1">
+                    <div class="cell">
+                        <!-- <div ng-include="'html/partials/tabs/about/contact-details.html'"></div> -->
+                        <div class="full-size margin10 no-margin-left no-margin-top no-margin-bottom bd-white bg-white">
+                            <div class="tile-scrollbar overflow-auto">
+
+                                <div class="grid no-margin">
+                                    <span class="fg-grayLight uppercase text-secondary">Name</span>
+                                    <p class="no-margin marginb5 break-word-all text-secondary">{{::websiteExtraDetail.contact_detail.name}}</p>
+
+                                    <span class="fg-grayLight uppercase text-secondary">Email</span>
+                                    <a ng-if="::websiteExtraDetail.contact_detail.email" href="mailto:{{::websiteExtraDetail.contact_detail.email}}">
+                                        <p class="no-margin marginb5 break-word-all text-secondary">{{::websiteExtraDetail.contact_detail.email}}</p>
+                                    </a>
+                                    <p class="no-margin marginb5 text-secondary" ng-if="!websiteExtraDetail.contact_detail.email">NA</p>
+
+                                    <span class="fg-grayLight uppercase text-secondary">Phone</span>
+                                    <a ng-if="::websiteExtraDetail.contact_detail.phone" href="tel:{{::websiteExtraDetail.contact_detail.phone}}">
+                                        <p class="no-margin marginb5break-word-all text-secondary">{{::websiteExtraDetail.contact_detail.phone}}</p>
+                                    </a>
+                                    <p class="no-margin marginb5 text-secondary" ng-if="!websiteExtraDetail.contact_detail.phone">NA</p>
+
+                                    <span class="fg-grayLight uppercase text-secondary">Address</span>
+                                    <p class="no-margin marginb5 text-secondary text-preline"><span ng-show="::websiteExtraDetail.contact_detail.address">{{::websiteExtraDetail.contact_detail.address}}</span> <span ng-hide="::websiteExtraDetail.contact_detail.address">NA</span></p>
+
+                                    <span class="fg-grayLight uppercase text-secondary">Contact Page</span>
+                                    <a href="{{::websiteExtraDetail.contact_detail.url}}" target="_blank">
+                                        <p class="no-margin marginb5 text-secondary break-word-all"><span ng-show="::websiteExtraDetail.contact_detail.url">{{::websiteExtraDetail.contact_detail.url}}</span> <span ng-hide="::websiteExtraDetail.contact_detail.url">NA</span></p>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</article>

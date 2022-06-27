@@ -1,0 +1,49 @@
+<style type="text/css">
+      .tab {
+        cursor: pointer;
+      }
+      .tab-active {
+        border-bottom: none !important;
+        background: #fff !important;
+      }
+      .bd-right-light  {
+        border-right: thin solid #c6c6c6;
+      }
+      .bd-bottom-light  {
+        border-bottom: thin solid #c6c6c6;
+      }
+      .tab-content {
+        height: 330px !important;
+        overflow: auto;
+      }
+    </style>
+
+<div style="z-index:100;" ng-if="::websiteDetail.slug">
+    
+    <ul class="f-menu bg-grayLighter">
+        <li class="bg-hover-white fg-hover-black tab bd-right-light bd-bottom-light" ng-class="{'tab-active':isActive=='overview'}" ng-click="isActive='overview'">
+          <h4 class="fg-gray"><span class="mif-file-text" style="vertical-align:bottom;"></span>&nbsp;&nbsp;Overview</h4>
+        </li>
+        
+        <li class="bg-hover-white fg-hover-black tab bd-right-light bd-bottom-light" ng-class="{'tab-active':isActive=='about'}" ng-click="isActive='about'">
+          <h4 class="fg-gray"><span class="mif-lamp" style="vertical-align:bottom;"></span>&nbsp;&nbsp;About</h4>
+        </li>
+      
+        
+        <li class="bg-hover-white fg-hover-black tab bd-bottom-light" ng-class="{'tab-active':isActive=='similar'}" ng-click="isActive='similar'">
+          <h4 class="fg-gray"><span class="mif-apps" style="vertical-align:bottom;"></span>&nbsp;&nbsp;Similar</h4>
+        </li>
+    </ul>    
+
+    <div ng-switch-when="overview">
+        <div ng-include="'html/partials/tabs/overview/overview.html'" class="about"></div>
+    </div>
+    <div ng-switch-when="about">
+        <div ng-include="'html/partials/tabs/about/about.html'" class="about"></div>
+    </div>
+ 
+    <div ng-switch-when="similar">
+        <div ng-include="'html/partials/tabs/similar/similar.html'"  class="about"></div>
+    </div>
+
+</div>

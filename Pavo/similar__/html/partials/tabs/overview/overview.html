@@ -1,0 +1,78 @@
+<article ng-controller="overviewCtrl">
+    <div>
+        <div class="overview-content marginh10">
+
+            <!-- Taxonomy -->
+            <div class="taxonomy marginl10">
+                <!--                <div class="separator "></div>-->
+                <div class="rows no-margin-top">
+
+                <div class="row">
+                    <div class="col icon w30"><span class="mif-list2 mif-lg icon-color overview-icon "></span>
+                        <!-- <div ng-show="!websiteDetail.website_type">&nbsp;</div> --></div>
+                    <div class="col name" style="color: white;">
+                        Type
+                    </div>
+                    <div class="col value right-side" ng-if="::websiteDetail.website_type">
+                        <h5 ng-bind="::websiteDetail.website_type"></h5></div>
+                    <div class="col value right-side" ng-if="!websiteDetail.website_type">
+                        <h5>NA</h5></div>
+                </div>
+                    <div class="separator "></div>
+            </div>
+
+            <div class="grid no-margin mrg-right-5" ng-if="similarWebsites.length">
+                <div class="marginh20">
+                   <h5 class="name no-marginx full-size fg-gray paddingv20">Similar Websites</h5>
+                    <div class="row cells12" style="padding-left:12px;">
+                        <div class="cell colspan4 align-center" ng-repeat="website in ::similarWebsites | limitTo:3" ng-includex="'html/partials/tabs/similar/similar_card.html'">
+                            <div class="tile no-margin full-size h115x w180x" style="border: thin solid #c6c6c6; width:170px !important; height: 100px !important;" ng-if="::website.slug">
+                                <a href="{{::website.url}}" target="_blank" ng-click="trackOutboundLink(website.url, chUrl, 'Website Visit', website.slug)">
+                                    <div class="tile-content">
+                                        <div class="image-container">
+                                            <div class="frame">
+                                                <img ng-if="::website.screenshot" ng-src="{{::website.screenshot}}?h=100" style="height:80px !important;" align="middle">
+                                                <img ng-if="!website.screenshot" ng-src="{{::websiteDetail.static_url}}desktop/search/images/placeholders/no-screenshot.png?h=100" class="h90">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile-status-bottom no-padding bg-grayLighter align-center text-ellipsis" style="text-decoration: underline;color:black; margin-top:50px; max-width:160px;" ng-bind="::website.slug" target="_blank">
+
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid no-margin mrg-right-5" ng-if="recommendedWebsites.results.length">
+                <div class="marginh20">
+                   <h5 class="name no-marginx fg-gray paddingv20">Recommended Websites</h5>
+                    <div class="row cells12" style="padding-left:12px;">
+                        <div class="cell colspan4 align-center" ng-repeat="website in ::recommendedWebsites.results track by $index" ng-includex="'html/partials/tabs/similar/similar_card.html'">
+                            <div class="tile no-margin full-size h115x w180x" style="border: thin solid #c6c6c6; width:170px !important; height: 100px !important;" ng-if="::website.slug">
+                                <a href="{{::website.url}}" target="_blank" ng-click="trackOutboundLink(website.url, chUrl, 'Website Visit', website.slug)">
+                                    <div class="tile-content">
+                                        <div class="image-container">
+                                            <div class="frame">
+                                                <img ng-if="::website.screenshot" ng-src="{{::website.screenshot}}?h=100" style="height:80px !important;" align="middle">
+                                                <img ng-if="!website.screenshot" ng-src="{{::websiteDetail.static_url}}desktop/search/images/placeholders/no-screenshot.png?h=100" class="h90">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tile-status-bottom no-padding bg-grayLighter align-center text-ellipsis" style="text-decoration: underline;color:black; margin-top:50px; max-width:160px;" ng-bind="::website.slug" target="_blank">
+
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</article>

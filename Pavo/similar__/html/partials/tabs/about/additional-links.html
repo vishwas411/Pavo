@@ -1,0 +1,24 @@
+<div class="custom-review-tile full-size margin10 no-margin-left no-margin-top no-margin-bottom bd-white bg-white">
+    <div class="tile-scrollbar overflow-auto">
+
+        <div class="grid no-margin">
+            <div class="row cells12 no-margin" ng-repeat="additionalLink in websiteExtraDetail.additional_links">
+
+                <div class="cell colspan4">
+                    <p class="description-about h-auto" ng-bind="::additionalLink.title">
+                    </p>
+
+                </div>
+                <div class="cell"></div>
+                <div class="cell colspan7">
+                    <p class="description-about h-auto">
+                        <a href="{{::additionalLink.url}}" ng-bind="::additionalLink.url" target="_blank">
+                        </a>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,1 @@
+const getUrlDomain=n=>{return new URL(n).host.split(/\./).slice(-2).join(".")};

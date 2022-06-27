@@ -1,0 +1,47 @@
+<div data-role="dialog" data-close-button="true" id="dialogWebsiteShare" class="dialogs send-share-dialog" >
+<div class="no-margin no-scroll-y">
+    
+   <div class="margin20">
+                <h4 class="align-center uppercase">Share {{::websiteDetail.slug}}</h4>
+                <h4 class="align-center "><small class="uppercase">Share discovered websites with friends</small></h4>
+                </div>
+
+
+
+
+    <div class="grid margin10 no-margin-bottom mrg-top-20">
+        <div class="row margin10">
+            <section class="place-left mrg-right-20 mrg-left-35">
+                <div class="tile no-margin no-outline bd-light padding10 h100 w100" data-role="tile">
+                    <div class="tile-content">
+                        <a target="_blank" href="{{::chUrl}}/website/{{::websiteDetail.slug}}">
+                            <img ng-if="websiteDetail.icon" class="place-left marginr20 ng-scope  h100 w100" ng-src="{{::websiteDetail.icon}}?h=200">
+                            <img ng-if="websiteDetail && !websiteDetail.icon" class="place-left marginr20 ng-scope  h100 w100" src="images/no-image-1.jpg">
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="cell no-margin bd-light padding10 w380 h152-min" >
+                <h4 class="no-margin">
+			            <a class="fg-darkViolet" target="_blank" href="{{::chUrl}}/website/{{::websiteDetail.slug}}">{{::websiteDetail.slug}}</a>
+			          </h4>
+                <p class="fg-dark text-secondary marginv20 h30-min" ng-if="sharedWebsite.short_description">{{::sharedWebsite.short_description}}</p>
+
+                <p class="fg-dark text-secondary" ng-if="sharedWebsite && !sharedWebsite.short_description">No Description</p>
+                <a class="text-underline ng-binding" href="{{::chUrl}}/website/{{::websiteDetail.slug}}" target="_blank" style="color:#2086bf;">
+					  	{{chUrl}}/website/{{websiteDetail.slug}}
+					  </a>
+            </section>
+        </div>
+    </div>
+    <div class="margin20 mrg-left-60">
+        <button class="button mini-button rounded" socialshare socialshare-provider="facebook" socialshare-url="{{::chUrl}}/website/{{::websiteDetail.slug}}"  ng-click="trackShare(chUrl + '/website/' + websiteDetail.slug,  'Facebook')"><span class="mif-facebook share-icon"></span>Facebook</button>
+        <button class="button mini-button rounded" socialshare socialshare-provider="twitter" socialshare-url="{{::chUrl}}/website/{{::websiteDetail.slug}}" ng-click="trackShare(chUrl + '/website/' + websiteDetail.slug,  'Twitter')"><span class="mif-twitter share-icon" ></span>Twitter</button>
+        <button class="button mini-button rounded" socialshare socialshare-provider="google+" socialshare-url="{{::chUrl}}/website/{{::websiteDetail.slug}}" ng-click="trackShare(chUrl + '/website/' + websiteDetail.slug,  'Google+')"><span class="mif-google-plus share-icon" ></span>Google+</button>
+        <button class="button mini-button rounded" socialshare socialshare-provider="linkedin" socialshare-url="{{::chUrl}}/website/{{::websiteDetail.slug}}" ng-click="trackShare(chUrl + '/website/' + websiteDetail.slug,  'LinkedIn')"><span class="mif-linkedin share-icon" ></span>LinkedIn</button>
+        <button class="button mini-button rounded" socialshare socialshare-provider="pinterest" socialshare-url="{{::chUrl}}/website/{{::websiteDetail.slug}}"><span class="mif-pinterest share-icon" ng-click="trackShare(chUrl + '/website/' + websiteDetail.slug,  'Pinterest')"></span>Pinterest</button>
+        <button class="button mini-button rounded" socialshare socialshare-provider="stumbleupon" socialshare-url="{{::chUrl}}/website/{{::websiteDetail.slug}}" ng-click="trackShare(chUrl + '/website/' + websiteDetail.slug,  'Stumbleupon')"><span class="mif-stumbleupon share-icon" ></span>Stumbleupon</button>
+
+    </div>
+</div>
+</div>

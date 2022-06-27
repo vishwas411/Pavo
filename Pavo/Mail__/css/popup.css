@@ -1,0 +1,321 @@
+body {
+   
+   
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #000;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    width:640px;
+    height:269px;
+}
+
+section > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.pen {
+    pointer-events: none;
+}
+
+.badge {
+    color: rgb(67, 240, 61);
+    padding: 5px;
+    font-size: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    border: solid 1px transparent;
+    margin-left: 6px;
+}
+
+.badge:hover {
+    border-color: #ffffff;
+    color: #000000;
+    background: gold;
+}
+
+.used {
+    border-color: #0a0 !important;
+    color: #0a0 !important;
+    background: #cfc !important;
+    cursor: default;
+}
+
+#header {
+    height: 60px;
+    margin: 0 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(32, 32, 32);
+}
+
+#email {
+    color: white;
+    flex: 1;
+    font-size: 25px;
+    font-weight: normal;
+    text-align: left;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: normal;
+    padding: 0 0 0 39px;
+    background: url(../img/icon.png) no-repeat;
+    background-size: 27px;
+    background-position: 11px 6px;
+}
+
+.hidden {
+    display: none;
+}
+
+#footer {
+    padding: 0px;
+    color: #555555;
+    text-align: center;
+    font-size: 11px;
+    display: flex;
+    flex-direction: row;
+}
+
+#footer > div:first-child {
+    flex: 1;
+    text-align: left;
+}
+
+#footer > div:last-child {
+    flex: 2;
+    text-align: right;
+    color: white;
+    background-color: #353434;
+    
+}
+
+
+#inbox {
+    border: solid 1px #e3e3e3;
+    border-width: 1px 0 1px 0;
+    padding: 15px;
+    background: rgb(31, 31, 31);
+    flex: 1 0;
+    overflow: hidden auto;
+}
+
+.item {
+    border: solid 1px #e6e6e6;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 hsla(0, 0%, 83%, 0.5);
+    background: #fff;
+    margin-bottom: 10px;
+}
+
+.header {
+    cursor: pointer;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    transition: background-color 0.4s;
+}
+
+
+.item:not(.opened).has-attachments > .header > .subject {
+    padding-left: 30px;
+}
+.item:not(.opened).has-attachments > .header > .subject:before {
+    content: "\00eedb";
+    font-size: 25px;
+    font-family: "IcoFont";
+    position: absolute;
+    margin-left: -31px;
+    font-weight: normal;
+    color: #666;
+}
+
+.item > .attachments {
+    display: none;
+    border-bottom: solid 1px #ccc;
+    padding: 10px;
+}
+
+.item > .attachments > a {
+    color: #000;
+    text-decoration: none;
+    padding-right: 10px;
+}
+
+.item > .attachments > a:hover {
+    color: #f00;
+}
+
+.item > .attachments > a:before {
+    content: "\00eedb";
+    font-family: "IcoFont";
+    font-weight: normal;
+    padding-right: 2px;
+}
+
+.item.opened > .attachments {
+    display: block;
+}
+
+.item > .header:hover, .item.opened > .header {
+    background-color: #ddf0ff;
+}
+
+    .header > .subject {
+        text-align: left;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .header > .subject.new {
+        font-weight: bold;
+    }
+
+    .header > .subject > .from {
+        padding-top: 2px;
+        font-size: 10px;
+        color: #666;
+        font-style: italic;
+    }
+
+    .header > .date {
+        text-align: right;
+        flex: 1;
+        color: #555555;
+        font-size: 11px;
+        padding-left: 20px;
+    }
+
+.body {
+    border-top: solid 1px #e6e6e6;
+    line-height: 18px;
+    padding: 10px;
+    border: none;
+    margin: 0;
+}
+
+
+.item:not(.opened) > .body {
+    display: none;
+}
+
+.item.opened {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.item.opened > .body {
+    flex: 1 0;
+    overflow: auto;
+}
+
+.item.opened > .header {
+    padding-left: 41px;
+}
+
+.item.opened > .header:before {
+    content: "\00ea5c";
+    font-size: 25px;
+    font-family: "IcoFont";
+    position: absolute;
+    left: 8px;
+    top: 16px;
+    color: rgba(0,0,0,0.2);
+}
+
+.item.opened > .header:hover {
+    background-color: #ffdddd;
+}
+
+.item.opened > .header:hover:before {
+    color: #f66;
+}
+
+.item > iframe {
+    padding: 0;
+    margin: 0;
+}
+
+
+#inbox > div.create {
+    flex: 1;
+    text-align: center;
+    padding-top: 85px;
+}
+
+#inbox > div.create > button {
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 10px;
+    border: solid 1px transparent;
+    color: white;
+}
+
+#inbox > div.create > button:hover {
+    border: solid 1px #6cf;
+    background: #ddf0ff;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.125);
+    color: #000;
+}
+
+#inbox > div.create > p {
+    font-size: 12px;
+    color: #666;
+}
+
+#inbox > .create > button > .icofont-magic {
+    display: block;
+    font-size: 80px;
+    padding-bottom: 20px;
+}
+
+
+#inbox > div.empty {
+    flex: 1;
+    padding-top: 119px;
+    text-align: center;
+    font-size: 13px;
+    font-style: italic;
+    color: #888;
+}
+
+#inbox > div.empty > i {
+    display: block;
+    font-size: 80px;
+    padding-bottom: 10px;
+}
+
+#supportus a {
+    text-decoration: none;
+    color: #888;
+}

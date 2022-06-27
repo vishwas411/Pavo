@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/popup.css">
+</head>
+<body>
+    <div class="toolbar">
+        <a href="../../../popup.html" class="opener">
+            Pavo
+        </a>
+
+        <div class="device">
+
+        </div>
+        <img class="mode" src="../../images/tool_bar_icon.png" alt="">
+        
+
+
+    </div>
+
+    <div class="container">
+        <div class="alert hidden" id="could-not-connect">
+            Could not insert credentials into page. Please reload the page and try again.
+        </div>
+
+        <ul class="logins list-group" id="logins"></ul>
+
+        <ul class="logins list-group" id="openBugmenot">
+            <li class="list-group-item login">
+                <div class="col-10 login-container">
+                    <span data-i18n="openBugMeNot"></span>
+                </div>
+            </li>
+        </ul>
+        
+
+        <hr class="seperator" />
+
+        <div>
+            <input type="hidden" name="autosubmit" id="autosubmit"> <span data-i18n="popupAutoSubmit"></span>
+        </div>
+        <div>
+            <input type="hidden" name="badge" id="badge"> <span data-i18n="popupShowBadge"></span>
+        </div>
+
+        <div class="small-text">
+            <p data-i18n="popupInfo"></p>
+            <p id="info"></p>
+            <p data-i18n="popupProvidedBy"></p>
+        </div>
+    </div>
+
+    <script src="js/color.js"></script>
+    <script src="../shared/main.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

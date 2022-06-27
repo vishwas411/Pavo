@@ -1,0 +1,69 @@
+{
+   "abyt_has_been_installed": {
+      "message": "Pavo installation successful"
+   },
+   "ads_will_be_blocked_on_yt": {
+      "message": "Enjoy Youtube without ads!"
+   },
+   "branding": {
+      "message": "~Pavo"
+   },
+   "disable": {
+      "message": "Disable"
+   },
+   "disabled": {
+      "message": "Disabled"
+   },
+   "enable": {
+      "message": "Enable"
+   },
+   "enable_non_video_ads": {
+      "message": "Enable Normal Ads"
+   },
+   "enable_video_ads": {
+      "message": "Enable Video Ads"
+   },
+   "extension_description": {
+      "message": "Removes ads from Youtube™."
+   },
+   "extension_name": {
+      "message": "Pavo"
+   },
+   "extension_short_name": {
+      "message": "Pavo"
+   },
+   "installed": {
+      "description": "badge for install page",
+      "message": "Installed"
+   },
+   "installed_page_title": {
+      "message": "Installed Pavo"
+   },
+
+   "options": {
+      "message": "Pavo Settings"
+   },
+   "options_short": {
+      "message": "Settings"
+   },
+   "page_action_title": {
+      "message": "Settings - Pavo"
+   },
+   "rate_this_extension": {
+      "message": "Rate us"
+   },
+   "recommend": {
+      "message": "Tell your friends"
+   },
+   "reviewNow": {
+      "description": "This text will be shown on share links (e.g. Twitter)",
+      "message": "Please support it with a review!"
+   },
+   "share_text": {
+      "description": "This text will be shown on share links (e.g. Twitter)",
+      "message": "I enjoy Youtube without ads thanks to Adblock for Youtube™ "
+   },
+   "support_us": {
+      "message": "Support our project"
+   }
+}

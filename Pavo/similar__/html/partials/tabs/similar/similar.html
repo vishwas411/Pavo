@@ -1,0 +1,19 @@
+<article ng-controller="similarCtrl">
+    <div ng-if="!similarWebsitesLoaded" class="align-center" style="padding: 130px 0;">
+        <div data-role="preloader" data-type="metro" data-style="color"></div>
+        <!-- <span class="mif-spinner4 mif-ani-spin mif-2x"></span> -->
+    </div>
+    <div ng-if="similarWebsitesLoaded">
+        <div ng-if="::similarWebsites.length">
+            <div class="grid margin10 mrg-right-5" ng-repeat="similarWebsite in similarWebsites track by $index" ng-if="$index % 3 == 0 && $index<6">
+                <div class="row cells12">
+                    <div class="cell colspan4 " ng-repeat="i in [$index, $index + 1, $index + 2]" ng-include="'html/partials/tabs/similar/similar_card.html'">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-show="!similarWebsites.length">
+            <h2 class="text-light align-center mrg-top-118">No results found</h2>
+        </div>
+    </div>
+</article>

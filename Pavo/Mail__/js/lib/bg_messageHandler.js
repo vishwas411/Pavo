@@ -1,0 +1,1 @@
+let EXT_bg_messageHandler=new function(){let t;t={};this.init=(()=>{i()});let i=()=>{chrome.runtime.onMessage.addListener((i,e,n)=>{i&&i.action&&t[i.action]&&t[i.action](i)})};this.addAction=((i,e)=>{t[i]=e}),this.addActions=(t=>{for(let i in t)this.addAction(i,t[i])})};EXT_bg_messageHandler.init();

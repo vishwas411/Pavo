@@ -1,0 +1,436 @@
+<style>
+  *,
+  :after,
+  :before {
+    box-sizing: border-box;
+  }
+
+  *,
+  :after,
+  :before {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: rgb(229, 231, 235);
+    border-right-color: rgb(229, 231, 235);
+    border-bottom-color: rgb(229, 231, 235);
+    border-left-color: rgb(229, 231, 235);
+  }
+
+  * {
+    --tw-shadow: 0 0 #0000;
+  }
+
+  * {
+    --tw-ring-inset: var(--tw-empty, );
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgba(59, 130, 246, 0.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+  }
+
+  .app {
+    height: 100vh;
+  }
+
+
+  :root {
+    -moz-tab-size: 4;
+    tab-size: 4;
+  }
+
+  :root {
+    --base-500: #a0aec0;
+    --base-200: #e2e8f0;
+    --base-300: #e2e8f0;
+    --base-400: #cbd5e0;
+    --main-400: #7f9cf5;
+    --main-200: #c3dafe;
+    --main-100: #ebf4ff;
+    --solid: #fff;
+    --solid-900: #4a5568;
+    --sidebar-bg: #edf2f7;
+    --sidebar-color: #4a5568;
+    --shadow: 0 10px 15px -3px rgba(36, 69, 101, 0.19), 0 4px 6px -2px #d0dce8;
+    --shadow-active: 0 0 0 2px currentColor, 0 10px 15px -3px rgba(36, 69, 101, 0.19), 0 4px 6px -2px #d0dce8;
+    --opener: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' stroke='%23fff' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'%3E%3Cpath d='M3 12h18M3 6h18M3 18h18'/%3E%3C/svg%3E");
+    --opener-active: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' stroke='%23fff' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1' viewBox='0 0 24 24'%3E%3Cpath d='M19 12H5m7 7l-7-7 7-7'/%3E%3C/svg%3E");
+  }
+
+  .dark-mode,
+  :root {
+    --main-500: #6366f1;
+  }
+
+  .toolbar {
+    background-color: #6366f1;
+    background-color: var(--main-500);
+    transition: padding .3s;
+    padding: 0 16px;
+    height: 64px;
+    width: 598px;
+    display: flex;
+    align-items: center;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: padding;
+    padding-top: 0px;
+    padding-right: 16px;
+    padding-bottom: 0px;
+    padding-left: 16px;
+  }
+
+  .app.has-sidebar .toolbar {
+    padding: 0 16px 0 176px;
+    padding-top: 0px;
+    padding-right: 16px;
+    padding-bottom: 0px;
+    padding-left: 176px;
+  }
+
+  :-webkit-scrollbar,
+  :-webkit-scrollbar-thumb,
+  :-webkit-scrollbar-track {
+    display: none;
+  }
+
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+  }
+
+  button,
+  select {
+    text-transform: none;
+  }
+
+  [type="button"],
+  [type="reset"],
+  [type="submit"],
+  button {
+    -webkit-appearance: button;
+    appearance: button;
+  }
+
+  button {
+    background-color: transparent;
+    background-image: none;
+  }
+
+  [role="button"],
+  button {
+    cursor: pointer;
+  }
+
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    padding: 0;
+    line-height: inherit;
+    color: inherit;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+  }
+
+  button {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  button,
+  button:focus {
+    outline: 0;
+    outline-color: initial;
+    outline-style: initial;
+    outline-width: 0px;
+  }
+
+  .line {
+    margin-left: 430px;
+    font-size: 22px;
+    font-family: cursive;
+  }
+
+  .opener {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    flex-shrink: 0;
+    position: relative;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: cursive;
+  }
+
+  .opener:before {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' stroke='%23fff' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'%3E%3Cpath d='M3 12h18M3 6h18M3 18h18'/%3E%3C/svg%3E");
+    background-image: var(--opener);
+    display: inline-block;
+    width: 18px;
+    flex-shrink: 0;
+    height: 18px;
+    content: "";
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 4px;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+  }
+
+  .opener:before {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' stroke='%23fff' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1' viewBox='0 0 24 24'%3E%3Cpath d='M19 12H5m7 7l-7-7 7-7'/%3E%3C/svg%3E");
+    background-image: var(--opener-active);
+  }
+
+  .copy-the-block {
+    border: 1px solid hsla(0, 0%, 100%, .4);
+    padding: 0 12px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    margin-right: 14px;
+    display: flex;
+    font-weight: 600;
+    align-items: center;
+    color: #fff;
+    height: 32px;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+    width: 130px;
+    text-align: center;
+    font-size: 13px;
+    transition: .3s;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.4);
+    border-right-color: rgba(255, 255, 255, 0.4);
+    border-bottom-color: rgba(255, 255, 255, 0.4);
+    border-left-color: rgba(255, 255, 255, 0.4);
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    padding-top: 0px;
+    padding-right: 12px;
+    padding-bottom: 0px;
+    padding-left: 12px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: all;
+  }
+
+  :nth-child(2) {
+    margin-left: auto;
+  }
+
+  .switcher {
+    display: flex;
+    padding: 0 10px;
+    height: 32px;
+    border-radius: 20px;
+    background-color: #fff;
+    align-items: center;
+    margin-right: 16px;
+    padding-top: 0px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+
+  .device {
+    color: #fff;
+    opacity: .3;
+    transition: .3s;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: all;
+  }
+
+  .device.is-active {
+    opacity: 1;
+  }
+
+  .device+.device {
+    margin-left: 8px;
+  }
+
+  .mode {
+    border-radius: 30px;
+    width: 145px;
+    position: relative;
+    height: 95px;
+    flex-shrink: 0;
+    margin-left: 351px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+  }
+
+  
+
+  .copy-the-block>svg {
+    width: 16px;
+    flex-shrink: 0;
+    margin-right: 6px;
+  }
+
+  .bg-indigo-500 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(99, 102, 241, var(--tw-bg-opacity));
+  }
+
+  .theme-button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+  }
+
+  .theme-button.is-active {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' stroke='%23fff' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1' viewBox='0 0 24 24'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
+    background-size: 10px;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 14px;
+    background-position: 50%;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-position-x: 50%;
+    background-position-y: center;
+  }
+
+
+
+  .device>svg {
+    width: 24px;
+  }
+
+
+
+  #content-container {
+    display: block;
+    position: relative;
+    width: 392px;
+    margin-left: auto;
+    margin-right: auto;
+
+
+  }
+</style>
+
+
+<style type="text/css">
+  .tab {
+    cursor: pointer;
+    width: 150px;
+  }
+
+  .tab-active {
+    border-bottom: none !important;
+    background: #fff !important;
+  }
+
+  .bd-right-light {
+    border-right: thin solid #c6c6c6;
+  }
+
+  .bd-bottom-light {
+    border-bottom: thin solid #c6c6c6;
+  }
+</style>
+
+<div class="toolbar">
+  <a href="../../popup.html" class="opener">
+    Pavo
+  </a>
+
+  <div class="device">
+
+  </div>
+  <img class="mode" src="../../../../images/tool_bar_icon.png" alt="">
+
+
+</div>
+<div ng-switch="isActive" ng-init="isActive='overview'">
+
+  <ul class="f-menu bg-grayLighter">
+    <li class="bg-hover-white fg-hover-black tab bd-right-light bd-bottom-light align-center"
+      ng-class="{'tab-active':isActive=='overview'}" ng-click="isActive='overview'; trackPageView('overview')">
+      <h4 class="fg-gray"><span class="mif-stack bottom-align w30"></span>&nbsp;&nbsp;Overview</h4>
+    </li>
+
+    <li class="bg-hover-white fg-hover-black tab bd-right-light bd-bottom-light align-center"
+      ng-class="{'tab-active':isActive=='about'}" ng-click="isActive='about';trackPageView('about')">
+      <h4 class="fg-gray"><span class="mif-file-text bottom-align"></span>&nbsp;&nbsp;About</h4>
+    </li>
+
+
+
+    <li class="bg-hover-white fg-hover-black tab bd-bottom-light" ng-class="{'tab-active':isActive=='similar'}"
+      ng-click="isActive='similar'; trackPageView('similar')">
+      <h4 class="fg-gray"><span class="mif-apps bottom-align"></span>&nbsp;&nbsp;Similar</h4>
+    </li>
+  </ul>
+
+  <div ng-switch-when="overview">
+    <div ng-include="'html/partials/tabs/overview/overview.html'" class="overflow-auto h274 scrollable1"></div>
+  </div>
+  <div ng-switch-when="about">
+    <div ng-include="'html/partials/tabs/about/about.html'" class="overflow-auto h274 scrollable"></div>
+  </div>
+
+  <div ng-switch-when="similar" style="overflow-y:hidden;">
+    <div ng-include="'html/partials/tabs/similar/similar.html'" class="overflow-auto h274 scrollable"></div>
+  </div>
+
+</div>

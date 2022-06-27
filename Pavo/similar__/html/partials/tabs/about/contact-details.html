@@ -1,0 +1,103 @@
+<div class="custom-review-tile full-size margin10 no-margin-left no-margin-top no-margin-bottom bd-white bg-white" >
+	<div class="tile-scrollbar overflow-auto">
+
+		<div class="grid no-margin">
+			<div class="row cells12 no-margin" ng-if="::websiteExtraDetail.contact_detail.name">
+				<div class="cell colspan4">
+					<p class="description-about"  class="description-about h-auto">
+						Name
+					</p>
+				</div>
+				<div class="cell"></div>
+				<div class="cell colspan7">
+					<p class="description-about h-auto" ng-bind="::websiteExtraDetail.contact_detail.name">
+					</p>
+
+				</div>
+			</div>
+
+			<div class="row cells12 no-margin" ng-if="::websiteExtraDetail.contact_detail.organization">
+				<div class="cell colspan4">
+					<p class="description-about h-auto">
+						Organization
+					</p>
+				</div>
+				<div class="cell"></div>
+				<div class="cell colspan7">
+					<p class="description-about h-auto" ng-bind="::websiteExtraDetail.contact_detail.organization">
+					</p>
+				</div>
+			</div>
+
+			<div class="row cells12 no-margin" ng-if="::websiteExtraDetail.contact_detail.email">
+				<div class="cell colspan4">
+					<p class="description-about h-auto">
+						Email
+					</p>
+				</div>
+				<div class="cell"></div>
+				<div class="cell colspan7">
+					<p class="description-about h-auto" ng-bind="::websiteExtraDetail.contact_detail.email">
+					</p>
+				</div>
+			</div>
+
+			<div class="row cells12 no-margin" ng-if="::websiteExtraDetail.contact_detail.phone">
+				<div class="cell colspan4">
+					<p class="description-about h-auto">
+						Phone
+					</p>
+				</div>
+				<div class="cell"></div>
+				<div class="cell colspan7">
+					<p class="description-about h-auto" ng-bind="::websiteExtraDetail.contact_detail.phone">
+					</p>
+				</div>
+			</div>
+
+			<div class="row cells12 no-margin" ng-if="::websiteExtraDetail.contact_detail.ch_profile">
+				<div class="cell colspan4">
+					<p class="description-about h-auto">
+						CybrHome Profile
+					</p>
+				</div>
+				<div class="cell"></div>
+				<div class="cell colspan7">
+					<p class="description-about h-auto" >
+						<a href="{{::chUrl}}/{{::websiteExtraDetail.contact_detail.ch_profile}}" ng-bind="::websiteExtraDetail.contact_detail.ch_profile" target="_blank"></a>
+					</p>
+				</div>
+			</div>
+
+			<div class="row cells12 no-margin" ng-if="::websiteExtraDetail.contact_detail.address">
+				<div class="cell colspan4">
+					<p class="description-about h-auto">
+						Address
+					</p>
+				</div>
+				<div class="cell"></div>
+				<div class="cell colspan7">
+					<p class="description-about h-auto" ng-bind="::websiteExtraDetail.contact_detail.address">
+					</p>
+
+				</div>
+			</div>
+
+			<div class="row cells12 no-margin" ng-if="::websiteExtraDetail.contact_detail.url">
+				<div class="cell colspan4">
+					<p class="description-about h-auto">
+						Contact Page Link
+					</p>
+				</div>
+				<div class="cell"></div>
+				<div class="cell colspan7">
+					<p class="description-about h-auto">
+					<a href="{{::websiteExtraDetail.contact_detail.url}}" ng-bind="::websiteExtraDetail.contact_detail.url" target="_blank"></a>
+					</p>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+</div>

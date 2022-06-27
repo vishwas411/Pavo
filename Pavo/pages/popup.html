@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="../styles/popup.css">
+  <style>
+    .AB {
+      height: 151px;
+      width: 392px;
+
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
+
+  <script src="../scripts/popup.js"></script>
+</head>
+
+<body>
+
+  <div id="page_frame_1_ek1">
+
+    <div class="toolbar">
+      <a href="../popup.html" class="opener">
+        Pavo
+      </a>
+
+      <div class="device">
+
+      </div>
+      <img class="mode" src="../images/tool_bar_icon.png" alt="">
+
+
+    </div>
+
+
+
+    <hr>
+    <div class="AB">
+      <form class="setting">
+        <input type="checkbox" id="ads" name="ads" class="switch-input">
+        <label for="ads" class="switch-label"><span>Skip Ads</span></label>
+      </form>
+
+      <form class="setting">
+        <input type="checkbox" id="annotations" name="annotations" class="switch-input">
+        <label for="annotations" class="switch-label"><span>No More ⓘ</span></label>
+      </form>
+    </div>
+    <hr>
+  
+
+
+  </div>
+
+
+
+</body>
+
+</html>

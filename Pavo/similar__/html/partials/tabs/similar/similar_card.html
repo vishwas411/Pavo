@@ -1,0 +1,18 @@
+
+<div class="tile no-margin full-size h115" style="border: thin solid #c6c6c6; width:179px!important;" ng-if="::similarWebsites[i].slug">
+        <a href="{{::similarWebsites[i].url}}" target="_blank" ng-click="trackOutboundLink(similarWebsites[i].url, 'Website - '+currentWebsiteSlug, 'Website Visit', similarWebsites[i].slug)">
+        <div class="tile-content">
+            <div class="image-container">
+                <div class="frame">
+                    <img ng-if="::similarWebsites[i].screenshot" ng-src="{{::similarWebsites[i].screenshot}}?h=100" class="h90">
+                    <img ng-if="!similarWebsites[i].screenshot" ng-src="{{::websiteDetail.static_url}}desktop/search/images/placeholders/no-screenshot.png?h=100" class="h90">
+                </div>
+                </div>
+            </div>
+            <div class="tile-status-bottom no-padding bg-grayLighter align-center" style="text-decoration: underline;color:black; margin-top:50px;" ng-bind="::similarWebsites[i].slug" target="_blank">
+                
+            </div>
+        </a>
+    
+</div>
+

@@ -1,0 +1,86 @@
+<html ng-app="chExtension" ng-csp="no-unsafe-eval">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" type="text/css" href="css/metro.min.css">
+    <link rel="stylesheet" type="text/css" href="css/metro-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="css/ch-util.css">
+    <script src="js/libs/jquery/jquery-2.1.3.min.js"></script>
+    <script src="js/libs/angular/angular.min.js"></script>
+    <script src="popup.js"></script>
+    <script src="js/scripts/analytics.js"></script>
+    <script src="js/libs/angular/angular-socialshare.js"></script>
+    <script src="js/libs/metro.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/libs/select2.min.js"></script>
+    <script src="js/scripts/ng/app.js"></script>
+    <script src="js/scripts/ng/directives/catDropdownDirective.js"></script>
+    <script src="js/scripts/ng/services/services.js"></script>
+    <script src="js/scripts/ng/controllers/homeCtrl.js"></script>
+    <script src="js/scripts/ng/controllers/overviewCtrl.js"></script>
+    <script src="js/scripts/ng/controllers/addWebsiteCtrl.js"></script>
+    <script src="js/scripts/ng/controllers/aboutCtrl.js"></script>
+    <script src="js/scripts/ng/controllers/reviewCtrl.js"></script>
+    <script src="js/scripts/ng/controllers/similarCtrl.js"></script>
+    <script src="js/scripts/ng/filters/formatParaFilter.js"></script>
+</head>
+
+<body class="w600 no-scroll-y">
+    <article id="mainWrapper" class="w600 no-scroll-y" style="border-width: 1px;" ng-cloak ng-controller="homeCtrl" ng-switch="isActive" ng-init="isActive='overview'">
+      
+        <!-- loader -->
+        <section class="h315" ng-if="loader && currentWebsiteSlug" style="margin: 33px 0;">
+            <section>
+                <div class="align-center" style="padding: 130px 0;">
+                    <div data-role="preloader" data-type="metro" data-style="color"></div>
+                </div>
+            </section>
+        </section>
+        <section ng-if="websiteProfileError">
+            <div ng-switch="websiteProfileError">
+                <div ng-switch-when="500">
+                    <div ng-include="'html/partials/errors/500.html'"></div>
+                </div>
+                <div ng-switch-when="400">
+                    <div ng-include="'html/partials/errors/400.html'"></div>
+                </div>
+                <div ng-switch-when="401">
+                    <div ng-include="'html/partials/errors/401.html'"></div>
+                </div>
+                <div ng-switch-when="403">
+                    <div ng-include="'html/partials/errors/403.html'"></div>
+                </div>                
+                <div ng-switch-when="404">
+                    <div ng-include="'html/partials/errors/404.html'"></div>
+                </div>                
+
+            </div>
+        </section>
+        <section ng-show="websiteDetail && currentWebsiteSlug && !websiteDetail.update">
+            <div ng-if="websiteDetail.is_listed && websiteDetail.slug">
+                <section class="h315 scrollable" ng-include="'html/partials/common/content.html'"></section>
+            </div>
+
+            <div ng-if="::websiteDetail.extra_info.message">
+                <section>
+                    <div class="align-center mrg-top-150">
+                        <h3 class="gray" ng-bind="::websiteDetail.extra_info.message"></h3>
+                    </div>
+                    
+                </section>
+            </div>
+
+            <section class="h399 overflow-auto scrollable" ng-include="'html/partials/common/website-add.html'" ng-if="!websiteDetail.is_listed && websiteDetail.is_listed!=null"></section>
+
+            <section ng-include="'html/partials/dialogs/login.html'"></section>
+        </section>
+        <section ng-if="!currentWebsiteSlug">
+            <div ng-hide="::userDetail.registered_user" ng-include="'html/partials/common/sign-in.html'">
+            </div>
+            <div ng-show="::userDetail.registered_user" ng-include="'html/partials/common/no-url.html'">
+            </div>
+        </section>
+    </article>
+</body>
+
+</html>
